@@ -52,22 +52,34 @@
   <!-- Apple Touch Icon (for iOS home screen) -->
   <link rel="apple-touch-icon" href="bilder/apple-touch-icon.png" sizes="180x180">
 
+
+
+
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrollbars */
+  }
+
+    iframe{
+      position: fixed;     
+      top: 0;
+      left: 0;
+      width: 100vw;         
+      height: 100vh;      
+      border: none;         
+      margin: 0;
+      padding: 0;
+      z-index: 9999;">
+    }
+</style>
+
 </head>
 
 <body id="background-body">
-  <iframe src="https://david-cmrg.github.io/KlausurenManager/" title="KlausurenManager Webseite wird vom Server heruntergeladen" 
-    style="
-    position: fixed;     
-    top: 0;
-    left: 0;
-    width: 100vw;         
-    height: 100vh;      
-    border: none;         
-    margin: 0;
-    padding: 0;
-    z-index: 9999;">
-    
-    </iframe>
+  <iframe src="https://david-cmrg.github.io/KlausurenManager/" title="KlausurenManager Webseite wird vom Server heruntergeladen"></iframe>
 </body>
 
 </html>
