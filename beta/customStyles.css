@@ -1,0 +1,416 @@
+// Generelle Seiten Styles
+    @media only screen and (max-width: 767px) {
+      main {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #clockAndTimer {
+        max-width: fit-content;
+        max-height: fit-content;
+        min-height: fit-content;
+        height: fit-content;
+      }
+
+      iframe {
+        width: 90% !important;
+        margin: 8% 0 5% 0 !important;
+        margin: 0 auto 15svh auto;
+        min-height: 65svh;
+        height: auto;
+      }
+
+    }
+
+    * {
+      font-family: 'Montserrat', Arial;
+      text-align: center;
+      color: white;
+    }
+
+    .siteHeader,
+    .authorHeader {
+      text-align: center;
+    }
+
+    .siteHeader {
+      margin: 4svh 0svh 0.6svh 0svh;
+    }
+
+    .authorHeader {
+      margin: 0svh 0svh 4svh 0svh;
+    }
+
+
+
+    main {
+      flex: 1;
+      width: 100% !important;
+      height: fit-content !important;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    #Clock {
+      width: 100% !important;
+      margin-bottom: 8%;
+    }
+
+
+    #clockTimeMain {
+      font-size: clamp(1.2rem, 6.5vw, 13.9rem) !important;
+      gap: 0.25rem;
+    }
+
+    #clockTimeSeconds {
+      font-size: clamp(1rem, 2vw, 2.4rem) !important;
+      font-family: 'MontserratMONO' !important;
+      font-variant-numeric: tabular-nums !important;
+    }
+
+    #hours,
+    #minutes,
+    #seconds {
+      font-size: clamp(1.2rem, 3vw, 4.2rem) !important;
+    }
+
+
+
+    .time-setter {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      font-size: clamp(0.75rem, 1.25vw, 3rem) !important;
+      text-align: center;
+    }
+
+    .unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      width: 40px;
+      height: 30px;
+      margin: 2px;
+    }
+
+    #controls {
+        display: flex;
+      margin-top: 20px;
+      justify-content: space-around;
+    }
+
+    body {
+      margin: 0;
+      color: white !important;
+      min-height: 100vh;
+    }
+
+    @media only screen and (min-width: 768px) {
+      body{
+        max-height: 100vh; 
+      }
+    }
+    html,
+    body {
+      overflow: scroll;
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer und Edge */
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Opera */
+    }
+
+
+
+
+    /* Background blur */
+
+    #clockAndTimer {
+      border-radius: 56.00000000000001px;
+      position: fixed;
+      isolation: isolate;
+      box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+
+      width: fit-content !important;
+
+      align-items: center;
+      border: none;
+      background: none;
+      padding: 0.85rem 1.25rem;
+      margin: 0;
+      text-decoration: none;
+    }
+
+
+    #clockAndTimer:focus {
+      outline: none;
+    }
+
+    #clockAndTimer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 56.00000000000001px;
+      box-shadow: inset 0 0 15px -6px #ffffff;
+      background-color: rgba(255, 255, 255, 0);
+      pointer-events: none;
+    }
+
+    #clockAndTimer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 56.00000000000001px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      filter: url(#glass-distortion);
+      -webkit-filter: url(#glass-distortion);
+      pointer-events: none;
+    }
+
+
+
+
+    .addTime,
+    .remTime {
+      font-size: clamp(20px, 2vw, 28px) !important;
+      width: 1.3em;
+      height: 1.3em;
+      border-radius: 50%;
+    }
+
+    .addTime,
+    .remTime {
+      width: 1.15em;
+      height: 1.15em;
+      border-radius: 50px;
+      position: relative;
+      isolation: isolate;
+      box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      cursor: pointer;
+      transition: ease-in-out 0.3s all;
+    }
+
+    .addTime:focus,
+    .remTime:focus {
+      outline: none;
+    }
+
+    .addTime::before,
+    .remTime::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 50px;
+      box-shadow: inset 0 0 16px -6px rgb(255, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    .addTime::before {
+      box-shadow: inset 0 0 16px -6px rgba(0, 255, 55, 0.4) !important;
+    }
+
+    .addTime::after,
+    .remTime::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 50px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      filter: url(#glass-distortion);
+      -webkit-filter: url(#glass-distortion);
+
+    }
+
+    .addTime:hover,
+    .remTime:hover {
+      background-color: rgba(255, 255, 255, 0.175);
+      transform: scale(1.05);
+      transition: ease-in-out 0.3s all;
+    }
+
+
+
+
+    .addTime {
+      color: green;
+    }
+
+    .remTime {
+      color: red;
+    }
+
+    #controls {
+      text-align: center;
+      align-self: center;
+    }
+
+    /*
+#toggle{
+    border: none;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+} */
+    #toggle {
+      position: relative;
+      /* establishes reference for ::after */
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      width: fit-content;
+      margin: 5px 10px;
+      padding: 0px 10px;
+    }
+
+
+    #toggle::after {
+      content: " ";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      border-radius: 1px;
+      transform: scaleX(1);
+      transition: all 0.6s ease;
+    }
+
+
+    .sideButtons {
+        position: relative;
+        /* establishes reference for ::after */
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        margin: 0;
+
+        border-radius: 56.00000000000001px;
+
+        width: fit-content;
+        aspect-ratio: 1/1;
+        transition: 0.3s ease-in-out;
+      }
+
+    .sideButtons:hover {
+        background: none;
+        box-shadow: inset 0 0 16px -6px rgba(203, 211, 205, 0.81) !important;
+        transition: 0.3s ease-in-out;
+    }
+
+    .sideButtons span{
+        padding: 0;
+        margin: 0;
+    }
+
+    #tutorialStarter {
+      visibility: visible;
+      top: 1.1rem;
+      right: 1.1rem;
+      border: none;
+      background: none;
+
+
+
+      border-radius: 56.00000000000001px;
+      position: relative;
+      isolation: isolate;
+      box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+
+      width: 2.2rem;
+      height: 2.2rem;
+      padding: 0.3rem;
+
+      margin: 0;
+      text-decoration: none;
+    }
+
+    #tutorialStarter::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 56.00000000000001px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      /* filter: url(#glass-distortion);
+       -webkit-filter: url(#glass-distortion); */
+      pointer-events: none;
+    }
+
+
+    #tutorialStarter::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 56.00000000000001px;
+      box-shadow: inset 0 0 15px -6px #ffffff;
+      background-color: rgba(255, 255, 255, 0);
+      pointer-events: none;
+    }
+
+
+
+
+
+    aside {
+      width: 250px; /* adjust width as needed */
+      padding: 0rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+
+    #contentWrapper{
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    #footerText{
+      font-size: 13px;
+      margin: 0svh auto;
+      
+      position: absolute;
+      left: 6%;
+      top: 93%;
+      transform: translateX(-6%);
+      transform: translateY(-93%);
+    }
